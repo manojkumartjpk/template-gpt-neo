@@ -9,7 +9,7 @@ class InferlessPythonModel:
         self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M")
 
     def infer(self, prompt):
-        pipeline_output = self.generator(prompt, do_sample=True, min_length=50)
+        pipeline_output = self.generator(prompt, do_sample=True, min_length=20)
         generated_txt = pipeline_output[0]["generated_text"]
         return generated_txt
 
